@@ -37,8 +37,19 @@ fn App(cx: Scope) -> Element {
                 Discovery {}
             }
             Route {
-                to: "/user/TempPage/:token",
+                to: "/user/tempPage/:token",
                 UserPublicPage {}
+            }
+            Route {
+                to: "/socialMedia/YuKun",
+                div {
+                    components::nav::Navbar {},
+                    br {}
+                    div {
+                        class: "flex justify-center font-bold text-2xl dark:text-white",
+                        "假装这是我的个人主页 -- YuKun Liu"
+                    }
+                }
             }
             // 404 page
             Route { to: "", pages::_404::NotFound {} }

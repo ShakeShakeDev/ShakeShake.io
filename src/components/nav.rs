@@ -1,5 +1,5 @@
 use dioxus::prelude::*;
-use dioxus_free_icons::{icons::hi_solid_icons, Icon};
+use dioxus_free_icons::{icons::fa_solid_icons, icons::hi_solid_icons, Icon};
 
 use crate::hooks::mode::{is_dark, mode};
 
@@ -21,6 +21,32 @@ pub fn Navbar(cx: Scope) -> Element {
     };
 
 
+    let mobile_nav_status = use_state(&cx, || true);
+
+    let mobile_nav = if *mobile_nav_status.get() {
+        cx.render(rsx! {
+            div {
+                class: "sm:hidden",
+                id: "mobile-menu",
+                div {
+                    class: "space-y-1 px-2 pt-2 pb-3",
+                    Link {
+                        class: "bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium",
+                        to: "/",
+                        "Discovery"
+                    }
+                    Link {
+                        class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
+                        to: "contact",
+                        "About Us"
+                    }
+                }
+            }
+        })
+    } else {
+        None
+    };
+
     cx.render(rsx! {
         nav {
             class: "dark:bg-gray-800",
@@ -34,12 +60,16 @@ pub fn Navbar(cx: Scope) -> Element {
                             class: "inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white",
                             "aria-controls": "mobile-menu",
                             "aria-expanded": "false",
-                            r#type: "button",span {
+                            r#type: "button",
+                            onclick: move |_| {
+                                mobile_nav_status.set(!mobile_nav_status.get())
+                            },
+                            span {
                                 class: "sr-only",
                                 "Open main menu"
                             }
                             Icon {
-                                icon: hi_solid_icons::HiMinus
+                                icon: fa_solid_icons::FaBars
                             }
                         }
                     }
@@ -113,23 +143,7 @@ pub fn Navbar(cx: Scope) -> Element {
                     }
                 }
             }
-            div {
-                class: "sm:hidden",
-                id: "mobile-menu",
-                div {
-                    class: "space-y-1 px-2 pt-2 pb-3",
-                    Link {
-                        class: "bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium",
-                        to: "/",
-                        "Discovery"
-                    }
-                    Link {
-                        class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
-                        to: "contact",
-                        "About Us"
-                    }
-                }
-            }
+            mobile_nav
         }
     })
 }

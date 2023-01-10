@@ -105,7 +105,7 @@ pub fn UserPublicPage(cx: Scope) -> Element {
                                 rsx! {
                                     a {
                                         class: "flex justify-center",
-                                        href: "123",
+                                        href: "/socialMedia/YuKun",
                                         key: "{key}",
                                         div {
                                             class: "rounded-lg w-5/6 sm:w-1/2 border-solid border border-[#7B45E7]",
