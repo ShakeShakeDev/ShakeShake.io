@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 use dioxus::prelude::*;
-use dioxus_free_icons::{Icon, icons::{hi_solid_icons, fa_brands_icons}};
+use dioxus_free_icons::{Icon, icons::{hi_solid_icons}};
 
 use crate::components::{nav::Navbar, icon::PhoneIcon};
 
