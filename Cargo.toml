@@ -1,5 +1,5 @@
 [package]
-name = "dioxus-starter"
+name = "shakeshake"
 version = "0.1.0"
 edition = "2021"
 
@@ -9,7 +9,7 @@ edition = "2021"
 dioxus = { version = "0.2.4", features = ["web", "router", "fermi"] }
 js-sys = "0.3.58"
 web-sys = { version = "0.3.58", features = ["Storage"] }
-dioxus-free-icons = "0.1.1"
+dioxus-free-icons = {version = "0.5.2", features = ["font-awesome-brands", "hero-icons-solid"] }
 dioxus-toast = { version = "0.1.5", default-features = false, features = ["web"] }
 gloo = "0.8.0"
 log = "0.4.6"

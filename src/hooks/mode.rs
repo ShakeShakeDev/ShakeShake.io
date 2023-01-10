@@ -1,5 +1,4 @@
 use dioxus::core::ScopeState;
-// use crate::hooks::use_storage;
 use dioxus_use_storage::use_local_storage;
 
 pub fn is_dark(cx: &ScopeState) -> bool {

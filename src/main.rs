@@ -8,7 +8,8 @@ mod hooks;
 mod pages;
 
 use hooks::mode::init_mode_info;
-use pages::starter::{About, HelloDioxus, SayHi};
+
+use crate::pages::{discovery::Discovery, user::UserPublicPage};
 
 static TOAST_MANAGER: dioxus::fermi::AtomRef<ToastManager> = |_| ToastManager::default();
 
@@ -19,6 +20,7 @@ fn main() {
 }
 
 fn App(cx: Scope) -> Element {
+
     // init mode information
     init_mode_info(&cx);
     
@@ -32,15 +34,11 @@ fn App(cx: Scope) -> Element {
         Router {
             Route {
                 to: "/",
-                HelloDioxus {}
+                Discovery {}
             }
             Route {
-                to: "/hi/:name",
-                SayHi {}
-            }
-            Route {
-                to: "/about",
-                About {}
+                to: "/user/TempPage/:token",
+                UserPublicPage {}
             }
             // 404 page
             Route { to: "", pages::_404::NotFound {} }
