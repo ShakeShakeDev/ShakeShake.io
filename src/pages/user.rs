@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use dioxus::prelude::*;
 use dioxus_free_icons::{Icon, icons::{hi_solid_icons}};
 
-use crate::components::{nav::Navbar, icon::PhoneIcon};
+use crate::components::{nav::Navbar, icon::{PhoneIcon, SocialMediaIcon}};
 
 struct UserData {
     username: String,
@@ -19,13 +19,18 @@ pub fn UserPublicPage(cx: Scope) -> Element {
 
     let _ = js_sys::eval("document.body.classList.add('bg-gray-100')");
 
-    let user = if token.to_uppercase() == "YUKUNYYDS" {
+    let user = if token.to_uppercase() == "YUKUNNB" {
+        
+        let mut links = HashMap::new();
+        links.insert("snapchat".to_string(), "YuKun_Liu".to_string());
+        links.insert("instagram".to_string(), "mrxiaozhuox".to_string());
+
         UserData {
             username: "YuKun Liu".into(),
             phone_number: "+1 6692939678".into(),
             avatar: "https://avatars.githubusercontent.com/u/41265098?v=4".into(),
             cover_image: "https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80".into(),
-            links: HashMap::new(),
+            links,
         }
     } else {
         return cx.render(rsx! { crate::pages::_404::NotFound {} });
@@ -68,30 +73,61 @@ pub fn UserPublicPage(cx: Scope) -> Element {
                                 }
                             }
                         }
+
                         div {
-                            class: "flex justify-center",
+                            class: "grid gap-y-4",
                             div {
-                                class: "rounded-lg w-1/2 border-solid border border-[#7B45E7]",
+                                class: "flex justify-center",
                                 div {
-                                    class: "flex p-4 space-x-4",
+                                    class: "rounded-lg w-5/6 sm:w-1/2 border-solid border border-[#7B45E7]",
                                     div {
-                                        class: "flex-shrink-0",
-                                        PhoneIcon {}
-                                    }
-                                    span {
-                                        class: "inline-flex items-center font-semibold dark:text-white w-5/6",
-                                        "{user.phone_number}"                                    
-                                    }
-                                    a {
-                                        class: "flex-1 inline-flex items-center text-gray-600 dark:text-white",
-                                        href: "javascript:navigator.clipboard.writeText('{user.phone_number}');",
-                                        Icon {
-                                            icon: hi_solid_icons::HiClipboardCopy
+                                        class: "flex p-4 space-x-4",
+                                        div {
+                                            class: "flex-shrink-0",
+                                            PhoneIcon {}
+                                        }
+                                        span {
+                                            class: "inline-flex items-center font-semibold dark:text-white w-5/6",
+                                            "{user.phone_number}"                                    
+                                        }
+                                        a {
+                                            class: "flex-1 inline-flex items-center text-gray-600 dark:text-white",
+                                            href: "javascript:navigator.clipboard.writeText('{user.phone_number}');",
+                                            Icon {
+                                                icon: hi_solid_icons::HiClipboardCopy
+                                            }
                                         }
                                     }
                                 }
                             }
+    
+                            user.links.iter().map(|(key, value)| {
+                                rsx! {
+                                    a {
+                                        class: "flex justify-center",
+                                        href: "123",
+                                        key: "{key}",
+                                        div {
+                                            class: "rounded-lg w-5/6 sm:w-1/2 border-solid border border-[#7B45E7]",
+                                            div {
+                                                class: "flex p-4 space-x-4",
+                                                div {
+                                                    class: "flex-shrink-0",
+                                                    SocialMediaIcon {
+                                                        name: key.to_string()
+                                                    }
+                                                }
+                                                span {
+                                                    class: "inline-flex items-center font-bold text-lg dark:text-white w-5/6",
+                                                    "@{value}"                                    
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            })
                         }
+
                     }
                 }
             }

@@ -62,16 +62,15 @@ pub fn Navbar(cx: Scope) -> Element {
                             class: "hidden sm:ml-6 sm:block",
                             div {
                                 class: "flex space-x-4",
-                                a {
+                                Link {
                                     class: "dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
-                                    "aria-current": "page",
-                                    href: "#",
+                                    to: "/",
                                     "Discovery"
                                 }
-                                a {
+                                Link {
                                     class: "dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
-                                    href: "#",
-                                    "Contact"
+                                    to: "contact",
+                                    "About Us"
                                 }
                             }
                         }
@@ -119,16 +118,15 @@ pub fn Navbar(cx: Scope) -> Element {
                 id: "mobile-menu",
                 div {
                     class: "space-y-1 px-2 pt-2 pb-3",
-                    a {
+                    Link {
                         class: "bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium",
-                        "aria-current": "page",
-                        href: "#",
+                        to: "/",
                         "Discovery"
                     }
-                    a {
+                    Link {
                         class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
-                        href: "#",
-                        "Contact"
+                        to: "contact",
+                        "About Us"
                     }
                 }
             }
