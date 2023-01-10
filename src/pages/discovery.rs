@@ -29,7 +29,7 @@ pub fn Discovery(cx: Scope) -> Element {
                             }
                             p {
                                 class: "mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-center",
-                                "We are committed to building a Web3 social link data platform, which finds and applies innovative solutions that enable the convenience and security across global social links. With a simple click on the screen, or shaking on phones,  our App aims to realize with ease the connection of many application scenarios, starting from social lives and businesses."
+                                "SHAKESHAKE interconnects all social media platforms via ONE shake. By simply shaking the phone, SHAKESHAKE's smart detector recognises synchronous gestures which allow individuals and collectives to connect on their default social links."
                             }
                             div {
                                 class: "mt-8 flex gap-x-4 sm:justify-center",
