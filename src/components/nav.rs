@@ -21,7 +21,7 @@ pub fn Navbar(cx: Scope) -> Element {
     };
 
 
-    let mobile_nav_status = use_state(&cx, || true);
+    let mobile_nav_status = use_state(&cx, || false);
 
     let mobile_nav = if *mobile_nav_status.get() {
         cx.render(rsx! {
@@ -31,12 +31,12 @@ pub fn Navbar(cx: Scope) -> Element {
                 div {
                     class: "space-y-1 px-2 pt-2 pb-3",
                     Link {
-                        class: "bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium",
+                        class: "dark:bg-gray-800 dark:text-white bg-gray-200 block px-3 py-2 rounded-md text-base font-medium",
                         to: "/",
                         "Discovery"
                     }
                     Link {
-                        class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
+                        class: "dark:bg-gray-800 dark:text-white bg-gray-200 block px-3 py-2 rounded-md text-base font-medium",
                         to: "contact",
                         "About Us"
                     }
