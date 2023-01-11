@@ -37,7 +37,6 @@ pub fn UserPublicPage(cx: Scope) -> Element {
     };
 
     cx.render(rsx! {
-        Navbar {}
         div {
             div {
                 img {

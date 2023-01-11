@@ -5,7 +5,6 @@ use crate::components::nav::Navbar;
 
 pub fn Discovery(cx: Scope) -> Element {
     cx.render(rsx! {
-        Navbar {}
         div {
             div {
                 class: "relative px-6 lg:px-8",
