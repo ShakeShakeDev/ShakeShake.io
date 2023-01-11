@@ -4,7 +4,7 @@ pub fn TermsOfService (cx: Scope) -> Element {
     cx.render(rsx! {
         br {}
         div {
-            class: "container mx-auto px-3 sm:px-40 dark:text-gray-100 font-semibold text-lg sm:text-xl",
+            class: "container mx-auto px-3 sm:px-40 dark:text-gray-100 font-semibold text-base sm:text-xl",
             div {
                 class: "flex flex-col space-y-6",
                 h1 {
