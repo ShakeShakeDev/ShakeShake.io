@@ -4,7 +4,7 @@ pub fn TermsOfService (cx: Scope) -> Element {
     cx.render(rsx! {
         br {}
         div {
-            class: "container mx-auto px-40 dark:text-gray-100 font-semibold text-xl",
+            class: "container mx-auto px-3 sm:px-40 dark:text-gray-100 font-semibold text-lg sm:text-xl",
             div {
                 class: "flex flex-col space-y-6",
                 h1 {
@@ -137,7 +137,7 @@ pub fn TermsOfService (cx: Scope) -> Element {
                     "The validity of the remaining provisions of this agreement will not be impacted if any of its terms are found to be or become invalid. Invalid phrases will be swapped out for ones that are constructed to accomplish the main goal and are valid. Collateral agreements, revisions, and adjustments must be put in writing to be enforceable. It is only possible to waive the previous clause in writing. After entering their phone number for the verification code, the user would grant us access to their contacts on their phone."
                 }
                 p {
-                    class: "font-bold text-2xl",
+                    class: "font-bold text-xl sm:text-2xl",
                     "This License Agreement is governed by the laws of the State of California excluding its conflicts of law rules."
                 }
             }
