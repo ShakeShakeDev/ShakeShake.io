@@ -9,7 +9,7 @@ mod pages;
 
 use hooks::mode::init_mode_info;
 
-use crate::pages::{discovery::Discovery, user::UserPublicPage, post::TermsOfService};
+use crate::pages::{discovery::Discovery, user::UserPublicPage, post::{TermsOfService, PrivacyPolicy}};
 
 static TOAST_MANAGER: dioxus::fermi::AtomRef<ToastManager> = |_| ToastManager::default();
 
@@ -45,6 +45,10 @@ fn App(cx: Scope) -> Element {
             Route {
                 to: "/terms-of-service",
                 TermsOfService {}
+            }
+            Route {
+                to: "/privacy-policy",
+                PrivacyPolicy {}
             }
             Route {
                 to: "/socialMedia/YuKun",
