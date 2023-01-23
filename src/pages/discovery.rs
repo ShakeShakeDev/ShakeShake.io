@@ -1,7 +1,6 @@
 use dioxus::prelude::*;
 use dioxus_free_icons::{icons::fa_brands_icons, Icon};
 
-use crate::components::nav::Navbar;
 
 pub fn Discovery(cx: Scope) -> Element {
     cx.render(rsx! {

@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use dioxus::prelude::*;
 use dioxus_free_icons::{Icon, icons::{hi_solid_icons}};
 
-use crate::components::{nav::Navbar, icon::{PhoneIcon, SocialMediaIcon}};
+use crate::components::icon::{PhoneIcon, SocialMediaIcon};
 
 struct UserData {
     username: String,

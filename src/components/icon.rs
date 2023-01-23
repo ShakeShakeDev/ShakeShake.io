@@ -2,7 +2,10 @@ use dioxus::prelude::*;
 
 use crate::hooks::mode::is_dark;
 
+#[inline_props]
 pub fn PhoneIcon(cx: Scope) -> Element {
+
+    log::debug!("{}", is_dark(&cx));
 
     let color = if !is_dark(&cx) {
         "#7B45E7"

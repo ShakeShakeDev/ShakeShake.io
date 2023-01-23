@@ -39,7 +39,7 @@ fn App(cx: Scope) -> Element {
                 Discovery {}
             }
             Route {
-                to: "/user/tempPage/:token",
+                to: "/user/tempHomePage/:token",
                 UserPublicPage {}
             }
             Route {
