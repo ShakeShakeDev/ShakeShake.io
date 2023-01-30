@@ -6,13 +6,24 @@ use serde::{Serialize, Deserialize};
 
 use crate::components::icon::{PhoneIcon, SocialMediaIcon};
 
-#[derive(Clone, Serialize, Deserialize)]
+#[derive(Clone, Serialize, Deserialize, Debug)]
 struct UserData {
+    #[serde(rename(deserialize = "Username"))]
     username: String,
-    phone_number: String,
-    avatar: String,
-    cover_image: String,
+
+    #[serde(rename(deserialize = "Profile"))]
+    profile: UserDataProfile,
+
+    #[serde(rename(deserialize = "Links"))]
     links: HashMap<String, String>,
+}
+
+#[derive(Clone, Serialize, Deserialize, Debug)]
+struct UserDataProfile {
+    #[serde(rename(deserialize = "Avatar"))]
+    avatar: String,
+    #[serde(rename(deserialize = "CoverImage"))]
+    cover_image: String,
 }
 
 pub fn UserPublicPage(cx: Scope) -> Element {
@@ -21,13 +32,13 @@ pub fn UserPublicPage(cx: Scope) -> Element {
 
     let _ = js_sys::eval("document.body.classList.add('bg-gray-100')");
 
-
-    let url = format!("api.shakeshake.io/user/tempHomePage/{}", token);
+    let url = format!("http://api.shakeshake.io/user/tempHomePage/{}", token);
     let res = use_future(&cx, (), |_| {
         async move {
             let resp = reqwasm::http::Request::get(&url).send().await;
             if let Ok(res) = resp {
                 let data = res.json::<UserData>().await;
+                log::info!("{:?}", data);
                 return data.ok();
             } else {
                 return None;
@@ -35,11 +46,11 @@ pub fn UserPublicPage(cx: Scope) -> Element {
         }
     });
 
-        match res.value() {
-            Some(user) => {
+    match res.value() {
+        Some(user) => {
 
-                if user.is_none() {
-                    return cx.render(rsx! {
+            if user.is_none() {
+                return cx.render(rsx! {
                         crate::pages::_404::NotFound {}
                     });
                 }
@@ -51,7 +62,7 @@ pub fn UserPublicPage(cx: Scope) -> Element {
                         div {
                             img {
                                 class: "absolute w-full h-[35vh] bg-center bg-cover",
-                                src: "{user.cover_image}",
+                                src: "{user.profile.cover_image}",
                             }
                         }
                         div {
@@ -62,7 +73,7 @@ pub fn UserPublicPage(cx: Scope) -> Element {
                                     class: "absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2",
                                     img {
                                         class: "w-32 h-32 rounded-full",
-                                        src: "{user.avatar}"
+                                        src: "{user.profile.avatar}"
                                     }
                                 }
                                 div {
@@ -97,11 +108,11 @@ pub fn UserPublicPage(cx: Scope) -> Element {
                                                     }
                                                     span {
                                                         class: "inline-flex items-center font-semibold dark:text-white w-5/6",
-                                                        "{user.phone_number}"                                    
+                                                        "123"                                    
                                                     }
                                                     a {
                                                         class: "flex-1 inline-flex items-center text-gray-600 dark:text-white",
-                                                        href: "javascript:navigator.clipboard.writeText('{user.phone_number}');",
+                                                        href: "javascript:navigator.clipboard.writeText('132');",
                                                         Icon {
                                                             icon: hi_solid_icons::HiClipboardCopy
                                                         }
