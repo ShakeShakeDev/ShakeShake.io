@@ -51,7 +51,7 @@ pub fn UserPublicPage(cx: Scope) -> Element {
 
             if user.is_none() {
                 return cx.render(rsx! {
-                        crate::pages::_404::NotFound {}
+                        crate::pages::_404::TokenNotFound {}
                     });
                 }
 
@@ -157,7 +157,7 @@ pub fn UserPublicPage(cx: Scope) -> Element {
 
             },
             None => {
-                return cx.render(rsx! { crate::pages::_404::NotFound {} });
+                return cx.render(rsx! { crate::pages::_404::TokenNotFound {} });
             },
         }
 }
