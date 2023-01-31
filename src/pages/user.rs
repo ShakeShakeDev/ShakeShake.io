@@ -32,7 +32,7 @@ pub fn UserPublicPage(cx: Scope) -> Element {
 
     let _ = js_sys::eval("document.body.classList.add('bg-gray-100')");
 
-    let url = format!("http://api.shakeshake.io/user/tempHomePage/{}", token);
+    let url = format!("https://api.shakeshake.io/user/tempHomePage/{}", token);
     let res = use_future(&cx, (), |_| {
         async move {
             let resp = reqwasm::http::Request::get(&url).send().await;
