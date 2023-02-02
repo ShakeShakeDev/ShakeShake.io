@@ -47,9 +47,9 @@ script = [
 # serve: [dev-server] only
 script = []
 
-# [plugin]
+[plugin]
 
-# available = true
+available = false
 
 # loader = [
 #     "/Users/mrxzx/Development/DioxusLabs/plugin-dev/dioxus-binaryen-plugin/"
