@@ -96,36 +96,48 @@ pub fn UserPublicPage(cx: Scope) -> Element {
             
                                     div {
                                         class: "grid gap-y-4",
-                                        div {
-                                            class: "flex justify-center",
-                                            div {
-                                                class: "rounded-lg w-5/6 sm:w-1/2 border-solid border border-[#7B45E7]",
-                                                div {
-                                                    class: "flex p-4 space-x-4",
+                                        user.links.iter().map(|(key, value)| {
+
+                                            if key == "phoneNumber" {
+
+                                                let region_number = value.split("!").collect::<Vec<&str>>();
+                                                let phone_number = region_number[1];
+                                                let region_number = region_number[0];
+
+                                                return rsx! {
                                                     div {
-                                                        class: "flex-shrink-0",
-                                                        PhoneIcon {}
-                                                    }
-                                                    span {
-                                                        class: "inline-flex items-center font-semibold dark:text-white w-5/6",
-                                                        "123"                                    
-                                                    }
-                                                    a {
-                                                        class: "flex-1 inline-flex items-center text-gray-600 dark:text-white",
-                                                        href: "javascript:navigator.clipboard.writeText('132');",
-                                                        Icon {
-                                                            icon: hi_solid_icons::HiClipboardCopy
+                                                        class: "flex justify-center",
+                                                        div {
+                                                            class: "rounded-lg w-5/6 sm:w-1/2 border-solid border border-[#7B45E7]",
+                                                            div {
+                                                                class: "flex p-4 space-x-4",
+                                                                div {
+                                                                    class: "flex-shrink-0",
+                                                                    PhoneIcon {}
+                                                                }
+                                                                span {
+                                                                    class: "inline-flex items-center font-semibold dark:text-white w-5/6",
+                                                                    "+{region_number} {phone_number}"
+                                                                }
+                                                                a {
+                                                                    class: "flex-1 inline-flex items-center text-gray-600 dark:text-white",
+                                                                    href: "javascript:navigator.clipboard.writeText('+{region_number} {phone_number}');",
+                                                                    Icon {
+                                                                        icon: hi_solid_icons::HiClipboardCopy
+                                                                    }
+                                                                }
+                                                            }
                                                         }
                                                     }
                                                 }
                                             }
-                                        }
-                
-                                        user.links.iter().map(|(key, value)| {
+
+                                            let link = crate::utils::generate_link(key, value);
+
                                             rsx! {
                                                 a {
                                                     class: "flex justify-center",
-                                                    href: "/socialMedia/YuKun",
+                                                    href: "{link}",
                                                     key: "{key}",
                                                     div {
                                                         class: "rounded-lg w-5/6 sm:w-1/2 border-solid border border-[#7B45E7]",

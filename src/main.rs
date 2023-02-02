@@ -6,6 +6,7 @@ use dioxus_toast::{ToastFrame, ToastManager};
 mod components;
 mod hooks;
 mod pages;
+mod utils;
 
 use hooks::mode::init_mode_info;
 
