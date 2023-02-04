@@ -123,23 +123,23 @@ pub fn Navbar(cx: Scope) -> Element {
                                 icon: hi_solid_icons::HiBell
                             }
                         }
-                        div {
-                            class: "relative ml-3",
-                            div {
-                                button {
-                                    class: "flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800",
-                                    id: "user-menu-button",
-                                    "aria-expanded": "false",
-                                    "aria-haspopup": "true",
-                                    r#type: "button",
-                                    img {
-                                        class: "h-8 w-8 rounded-full",
-                                        alt: "",
-                                        src: "https://avatars.githubusercontent.com/u/41265098?v=4",
-                                    }
-                                }
-                            }
-                        }
+                        // div {
+                        //     class: "relative ml-3",
+                        //     div {
+                        //         button {
+                        //             class: "flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800",
+                        //             id: "user-menu-button",
+                        //             "aria-expanded": "false",
+                        //             "aria-haspopup": "true",
+                        //             r#type: "button",
+                        //             img {
+                        //                 class: "h-8 w-8 rounded-full",
+                        //                 alt: "",
+                        //                 src: "https://avatars.githubusercontent.com/u/41265098?v=4",
+                        //             }
+                        //         }
+                        //     }
+                        // }
                     }
                 }
             }
