@@ -132,7 +132,7 @@ pub fn UserPublicPage(cx: Scope) -> Element {
                                                 }
                                             }
 
-                                            let link = crate::utils::generate_link(key, value);
+                                            let (name, link) = crate::utils::generate_link(key, value);
 
                                             rsx! {
                                                 a {
@@ -151,7 +151,7 @@ pub fn UserPublicPage(cx: Scope) -> Element {
                                                             }
                                                             span {
                                                                 class: "inline-flex items-center font-bold text-lg dark:text-white w-5/6",
-                                                                "@{value}"                                    
+                                                                "@{name}"                                    
                                                             }
                                                         }
                                                     }
