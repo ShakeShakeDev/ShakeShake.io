@@ -1,13 +1,13 @@
-pub fn generate_link(key: &str, name: &str) -> String {
+pub fn generate_link(key: &str, name: &str) -> (String, String) {
     return match key {
         "twitter" => {
-            format!("https://twitter.com/{name}")
+            (name.to_string(), format!("https://twitter.com/{name}"))
         },
         "instagram" => {
-            format!("https://www.instagram.com/{name}")
+            (name.to_string(), format!("https://www.instagram.com/{name}"))
         }
         _ => {
-            name.to_string()
+            (key.to_string(), name.to_string())
         },
     }
 }

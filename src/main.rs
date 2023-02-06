@@ -55,16 +55,6 @@ fn App(cx: Scope) -> Element {
                 to: "/about-us",
                 AboutUS {}
             }
-            Route {
-                to: "/socialMedia/YuKun",
-                div {
-                    br {}
-                    div {
-                        class: "flex justify-center font-bold text-2xl dark:text-white",
-                        "假装这是我的个人主页 -- YuKun Liu"
-                    }
-                }
-            }
             // 404 page
             Route { to: "", pages::_404::NotFound {} }
         }
