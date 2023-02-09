@@ -132,7 +132,7 @@ pub fn UserPublicPage(cx: Scope) -> Element {
                                                 }
                                             }
 
-                                            let (name, link) = crate::utils::generate_link(key, value);
+                                            let (name, link) = crate::utils::generate_link(&key.to_lowercase(), value);
 
                                             rsx! {
                                                 a {

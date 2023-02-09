@@ -6,6 +6,12 @@ pub fn generate_link(key: &str, name: &str) -> (String, String) {
         "instagram" => {
             (name.to_string(), format!("https://www.instagram.com/{name}"))
         }
+        "email" => {
+            (name.to_string(), format!("mailto:{name}"))
+        }
+        "tiktok" => {
+            (name.to_string(), format!("https://www.tiktok.com/@{name}"))
+        }
         _ => {
             (key.to_string(), name.to_string())
         },
