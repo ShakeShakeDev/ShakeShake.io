@@ -12,6 +12,9 @@ pub fn generate_link(key: &str, name: &str) -> (String, String) {
         "tiktok" => {
             (name.to_string(), format!("https://www.tiktok.com/@{name}"))
         }
+        "snapchat" => {
+            (name.to_string(), format!("https://www.snapchat.com/add/{name}"))
+        }
         _ => {
             (key.to_string(), name.to_string())
         },
