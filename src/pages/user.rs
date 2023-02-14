@@ -24,6 +24,8 @@ struct UserDataProfile {
     avatar: String,
     #[serde(rename(deserialize = "CoverImage"))]
     cover_image: String,
+    #[serde(rename(deserialize = "Introduction"))]
+    introduction: String,
 }
 
 pub fn UserPublicPage(cx: Scope) -> Element {
@@ -85,7 +87,7 @@ pub fn UserPublicPage(cx: Scope) -> Element {
                                         }
                                         p {
                                             class: "flex justify-center font-extralight text-gray-400",
-                                            "@SJSU 23 Computer Science"
+                                            "{user.profile.introduction}"
                                         }
                                         p {
                                             hr {
