@@ -1,5 +1,5 @@
 pub fn generate_link(key: &str, name: &str) -> (String, String) {
-    return match key {
+    let (mut name, link) = match key {
         "twitter" => {
             (name.to_string(), format!("https://twitter.com/{name}"))
         },
@@ -18,5 +18,11 @@ pub fn generate_link(key: &str, name: &str) -> (String, String) {
         _ => {
             (key.to_string(), name.to_string())
         },
+    };
+
+    if key != "email" {
+        name = format!("@{name}");
     }
+
+    return (name, link);
 }

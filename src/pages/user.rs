@@ -153,7 +153,7 @@ pub fn UserPublicPage(cx: Scope) -> Element {
                                                             }
                                                             span {
                                                                 class: "inline-flex items-center font-bold text-lg dark:text-white w-5/6",
-                                                                "@{name}"                                    
+                                                                "{name}"                                    
                                                             }
                                                         }
                                                     }
