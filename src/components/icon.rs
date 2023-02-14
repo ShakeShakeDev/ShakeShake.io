@@ -163,7 +163,7 @@ pub fn SocialMediaIcon(cx: Scope, name: String) -> Element {
                 rsx! {
                     svg {
                         fill: "none",
-                        height: "55",
+                        height: "51",
                         "viewBox": "0 0 51 51",
                         width: "55",
                         xmlns: "http://www.w3.org/2000/svg",
