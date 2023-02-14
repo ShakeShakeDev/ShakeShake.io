@@ -164,7 +164,7 @@ pub fn SocialMediaIcon(cx: Scope, name: String) -> Element {
                     svg {
                         fill: "none",
                         height: "55",
-                        "viewBox": "0 0 55 55",
+                        "viewBox": "0 0 51 51",
                         width: "55",
                         xmlns: "http://www.w3.org/2000/svg",
                         path {
