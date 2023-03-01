@@ -11,6 +11,13 @@ pub fn Discovery(cx: Scope) -> Element {
                     class: "mx-auto max-w-3xl pt-20 pb-32 sm:pt-30 sm:pb-40",
                     div {
                         div {
+                            div {
+                                class: "flex justify-center",
+                                img {
+                                    class: "w-72",
+                                    src: "/assets/images/medias.png",
+                                }
+                            }
                             h1 {
                                 class: "text-4xl text-purple-800 font-bold font-quantico tracking-tight [text-shadow:0_4px_4px_rgba(0,0,0,0.1),0_6px_8px_rgba(0,0,0,0.5)] sm:text-center sm:text-6xl dark:text-purple-300",
                                 "Shake to link the world"
