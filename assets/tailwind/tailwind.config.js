@@ -1,3 +1,10 @@
 tailwind.config = {
-    darkMode: "class"
+    darkMode: "class",
+    theme: {
+        extend: {
+            fontFamily: {
+                quantico: ["Quantico"]
+            }
+        }
+    },
 }
