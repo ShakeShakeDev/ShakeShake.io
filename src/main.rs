@@ -34,6 +34,13 @@ fn App(cx: Scope) -> Element {
             maximum: 6,
         }
 
+        style {
+            "
+            @font-face {{ font-family: Quantico; src: url(/assets/fonts/Quantico-Regular.ttf) format(\"TrueType\") }}
+            @font-face {{ font-family: Quantico; src: url(/assets/fonts/Quantico-Bold.ttf) format(\"TrueType\") }}
+            "
+        }
+
         // dioxus router info
         Router {
             components::nav::Navbar {}

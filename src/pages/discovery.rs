@@ -11,22 +11,12 @@ pub fn Discovery(cx: Scope) -> Element {
                     class: "mx-auto max-w-3xl pt-20 pb-32 sm:pt-30 sm:pb-40",
                     div {
                         div {
-                            class: "hidden sm:mb-8 sm:flex sm:justify-center",
-                            div {
-                                class: "relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 dark:ring-gray-100",
-                                span {
-                                    class: "text-gray-600 dark:text-gray-200",
-                                    "Announcing our next round of funding."
-                                }
-                            }
-                        }
-                        div {
                             h1 {
-                                class: "text-4xl font-bold tracking-tight sm:text-center sm:text-6xl dark:text-white",
+                                class: "text-4xl text-purple-800 font-bold font-quantico tracking-tight [text-shadow:0_4px_4px_rgba(0,0,0,0.1),0_6px_8px_rgba(0,0,0,0.5)] sm:text-center sm:text-6xl dark:text-purple-300",
                                 "Shake to link the world"
                             }
                             p {
-                                class: "mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-center",
+                                class: "mt-6 text-lg leading-8 font-quantico text-gray-600 dark:text-gray-200 sm:text-center",
                                 "SHAKESHAKE interconnects all social media platforms via ONE shake. By simply shaking the phone, SHAKESHAKE's smart detector recognises synchronous gestures which allow individuals and collectives to connect on their default social links."
                             }
                             div {
