@@ -19,7 +19,7 @@ pub fn Discovery(cx: Scope) -> Element {
                                 }
                             }
                             h1 {
-                                class: "text-4xl text-purple-800 font-bold font-quantico tracking-tight [text-shadow:0_4px_4px_rgba(0,0,0,0.1),0_6px_8px_rgba(0,0,0,0.5)] text-center sm:text-6xl dark:text-purple-300",
+                                class: "text-4xl text-purple-700 font-bold font-quantico tracking-tight [text-shadow:0_4px_4px_rgba(0,0,0,0.1),0_6px_8px_rgba(0,0,0,0.5)] text-center sm:text-6xl dark:text-purple-300",
                                 "Shake to link the world"
                             }
                             p {
